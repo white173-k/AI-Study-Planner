@@ -5,32 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyAI - AI-Powered Study Planner</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-   <nav class="navbar">
-    <div class="logo">StudyAI</div>
-    <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#planner">Create Plan</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-    </ul>
-    
-    <div class="nav-actions" style="display: flex; align-items: center; gap: 20px;">
-        <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
-            <i class="fas fa-moon"></i>
-        </button>
-        <a href="#planner" class="btn btn-primary nav-btn">Get Started</a>
-    </div>
-</nav>
+    <header>
+        <nav class="navbar">
+            <div class="logo">StudyAI</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#planner">Create Plan</a></li>
+                <li><a href="#dashboard">Live Dashboard</a></li>
+            </ul>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 20px;">
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#planner" class="btn btn-primary nav-btn">Get Started</a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="badge">Powered by Advanced AI</span>
             <h1>Your Path to <span class="gradient-text">A+</span></h1>
             <p>Let AI create the perfect study schedule tailored to your goals, learning style, and available time. Study smarter, not harder.</p>
             <div class="hero-buttons">
@@ -46,7 +44,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="features">
         <h2>Why Choose Our AI Study Planner</h2>
         <p class="section-subtitle">Experience the future of learning with intelligent features designed to maximize your academic potential.</p>
@@ -85,7 +82,6 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
         <h2>How It Works</h2>
         <p class="section-subtitle">Get your personalized study plan in just a few simple steps.</p>
@@ -114,96 +110,184 @@
         </div>
     </section>
 
-    <!-- Main Interactive Planner Section -->
     <section id="planner" class="planner-section">
-        <h2>Create Your Study Plan</h2>
-        <p class="section-subtitle">Tell us about your subjects and goals, and let our AI craft the perfect study schedule for you.</p>
+        <div class="planner-title-area">
+            <h2>Create Your Study Plan</h2>
+            <p class="section-subtitle">Tell us about your subjects and goals, and let our AI craft the perfect study schedule for you.</p>
+        </div>
 
-        <div class="planner-container">
-            <!-- Input Form Left -->
-            <div class="planner-form">
-                <h3>Your Subjects & Preferences</h3>
+        <div class="planner-container-v2">
+            <div class="glass-card planner-form-v2">
+                <div class="card-header-v2">
+                    <span class="icon-wrap"><i class="fas fa-book-open"></i></span>
+                    <h3>Your Core Subjects</h3>
+                </div>
+                
                 <form id="studyForm">
-                    <div id="subjectsContainer">
-                        <!-- Dynamic Subjects will be listed here, adding default ones initially -->
-                        <div class="subject-row">
-                            <input type="text" value="Mathematics" class="sub-name" required>
-                            <select class="sub-diff">
-                                <option value="hard" selected>Hard</option>
-                                <option value="medium">Medium</option>
-                                <option value="easy">Easy</option>
-                            </select>
-                            <select class="sub-priority">
-                                <option value="high" selected>High</option>
-                                <option value="medium">Medium</option>
-                                <option value="low">Low</option>
-                            </select>
-                        </div>
-                        <div class="subject-row">
-                            <input type="text" value="Physics" class="sub-name" required>
-                            <select class="sub-diff"><option value="hard" selected>Hard</option><option value="medium">Medium</option><option value="easy">Easy</option></select>
-                            <select class="sub-priority"><option value="high" selected>High</option><option value="medium">Medium</option><option value="low">Low</option></select>
-                        </div>
-                        <div class="subject-row">
-                            <input type="text" value="Chemistry" class="sub-name" required>
-                            <select class="sub-diff"><option value="hard">Hard</option><option value="medium" selected>Medium</option><option value="easy">Easy</option></select>
-                            <select class="sub-priority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option></select>
+                    <div id="subjectsContainer" class="subjects-list-v2">
+                        <div class="subject-row-v2">
+                            <div class="input-glow-wrap name-field">
+                                <i class="fas fa-signature input-icon"></i>
+                                <input type="text" value="Mathematics" class="sub-name" required placeholder="Subject Name">
+                            </div>
+                            <div class="input-glow-wrap tag-field" style="flex: 1;">
+                                <i class="fas fa-tag input-icon"></i>
+                                <input type="text" value="Maths" class="sub-tag" placeholder="Tag (eg: Coding)">
+                            </div>
+                            <div class="select-glow-wrap">
+                                <select class="sub-diff" title="Difficulty">
+                                    <option value="hard" selected>🔥 Hard</option>
+                                    <option value="medium">⚡ Medium</option>
+                                    <option value="easy">🌱 Easy</option>
+                                </select>
+                            </div>
+                            <div class="select-glow-wrap">
+                                <select class="sub-priority" title="Priority">
+                                    <option value="high" selected>🔺 High</option>
+                                    <option value="medium">🔸 Medium</option>
+                                    <option value="low">🔹 Low</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     
-                    <button type="button" id="addSubjectBtn" class="btn btn-secondary btn-sm"><i class="fas fa-plus"></i> Add Subject</button>
+                    <button type="button" id="addSubjectBtn" class="btn-add-v2">
+                        <i class="fas fa-plus-circle"></i> Add New Subject
+                    </button>
 
-                    <hr>
+                    <div class="form-divider-v2"><span><i class="fas fa-sliders-h"></i> AI Preferences</span></div>
 
-                    <!-- Preferences Sub-Form -->
-                    <div class="preferences-box">
-                        <h3>Preferences</h3>
-                        <div class="form-group">
-                            <label>Daily Study Hours:</label>
-                            <input type="number" id="studyHours" min="1" max="16" value="5" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Preferred Time of Day:</label>
-                            <div class="time-options">
-                                <label><input type="radio" name="timeOfDay" value="Morning" checked> 🌅 Morning</label>
-                                <label><input type="radio" name="timeOfDay" value="Afternoon"> ☀️ Afternoon</label>
-                                <label><input type="radio" name="timeOfDay" value="Evening"> 🌆 Evening</label>
-                                <label><input type="radio" name="timeOfDay" value="Night"> 🌙 Night</label>
+                    <div class="preferences-box-v2">
+                        <div class="pref-grid-v2">
+                            <div class="form-group-v2">
+                                <label><i class="fas fa-hourglass-half"></i> Daily Study Hours</label>
+                                <div class="input-glow-wrap">
+                                    <input type="number" id="studyHours" min="1" max="16" value="5" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group-v2">
+                                <label><i class="fas fa-crosshairs"></i> Primary Target Goal</label>
+                                <div class="select-glow-wrap">
+                                    <select id="studyGoal">
+                                        <option value="Top Grades">🏆 Top Grades</option>
+                                        <option value="Exam Prep" selected>🎯 Exam Prep</option>
+                                        <option value="Complete Syllabus">📚 Complete Syllabus</option>
+                                        <option value="Daily Practice">📝 Daily Practice</option>
+                                        <option value="Revision Focus">🔄 Revision Focus</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label>Primary Focus / Goal:</label>
-                            <select id="studyGoal">
-                                <option value="Top Grades">Top Grades</option>
-                                <option value="Exam Prep" selected>Exam Prep</option>
-                                <option value="Complete Syllabus">Complete Syllabus</option>
-                                <option value="Daily Practice">Daily Practice</option>
-                                <option value="Revision Focus">Revision Focus</option>
-                            </select>
+                        
+                        <div class="form-group-v2 full-width">
+                            <label><i class="fas fa-bolt"></i> Peak Cognitive Energy Window</label>
+                            <div class="time-options-v2">
+                                <label class="time-pill">
+                                    <input type="radio" name="timeOfDay" value="Morning" checked>
+                                    <span class="pill-content">🌅 Morning</span>
+                                </label>
+                                <label class="time-pill">
+                                    <input type="radio" name="timeOfDay" value="Afternoon">
+                                    <span class="pill-content">☀️ Afternoon</span>
+                                </label>
+                                <label class="time-pill">
+                                    <input type="radio" name="timeOfDay" value="Evening">
+                                    <span class="pill-content">🌆 Evening</span>
+                                </label>
+                                <label class="time-pill">
+                                    <input type="radio" name="timeOfDay" value="Night">
+                                    <span class="pill-content">🌙 Night</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">Generate AI Study Plan</button>
+                    <button type="submit" class="btn-generate-v2">
+                        <span>Generate AI Study Plan</span> <i class="fas fa-magic"></i>
+                    </button>
                 </form>
             </div>
 
-            <!-- Output Display Right -->
-            <div class="planner-output" id="plannerOutput">
-                <div class="empty-state" id="emptyState">
-                    <i class="fas fa-robot"></i>
-                    <h3>Your Study Plan Will Appear Here</h3>
-                    <p>Add your subjects, set your preferences, and click "Generate AI Study Plan" to get started.</p>
+            <div class="glass-card planner-output-v2" id="plannerOutput">
+                <div class="empty-state-v2" id="emptyState">
+                    <div class="ai-avatar-glow">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Matrix Terminal</h3>
+                    <p>Configure your academic metrics on the left panel, then run the algorithm to generate your optimized schedule network.</p>
                 </div>
                 <div class="plan-result hidden" id="planResult">
-                    <!-- Dynamic Output Generated by JS -->
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard-section">
+        <h2>Live Dashboard Workspace</h2>
+        <p class="section-subtitle">Manage execution tracks, log parameters, and maintain acoustic focus states.</p>
+        
+        <div class="calendar-strip-v2" id="calendarStrip">
+            </div>
+
+        <div class="dashboard-grid-v2">
+            <div class="dash-card-v2">
+                <h3><i class="fas fa-chart-pie" style="color: var(--primary);"></i> Productivity Index</h3>
+                <div class="circular-progress-box">
+                    <div class="circular-progress">
+                        <span id="progressPercent">0%</span>
+                    </div>
+                </div>
+                <p class="card-desc">Tasks finalized in current session checkpoint.</p>
+            </div>
+
+            <div class="dash-card-v2">
+                <h3><i class="fas fa-chart-bar" style="color: var(--warning);"></i> Weekly Activity Log</h3>
+                <div class="bar-chart-container-v2">
+                    <div class="bar-wrapper"><div class="bar-fill" style="height: 40%;"><span>4h</span></div><div class="bar-label">Mon</div></div>
+                    <div class="bar-wrapper"><div class="bar-fill" style="height: 65%;"><span>6.5h</span></div><div class="bar-label">Tue</div></div>
+                    <div class="bar-wrapper"><div class="bar-fill" style="height: 85%;"><span>8.5h</span></div><div class="bar-label">Wed</div></div>
+                    <div class="bar-wrapper"><div class="bar-fill" style="height: 50%;"><span>5h</span></div><div class="bar-label">Thu</div></div>
+                    <div class="bar-wrapper"><div class="bar-fill current-day" id="todayBar" style="height: 0%;"><span>0h</span></div><div class="bar-label">Fri</div></div>
+                    <div class="bar-wrapper"><div class="bar-fill" style="height: 20%;"><span>2h</span></div><div class="bar-label">Sat</div></div>
+                    <div class="bar-wrapper"><div class="bar-fill" style="height: 0%;"><span>0h</span></div><div class="bar-label">Sun</div></div>
+                </div>
+            </div>
+
+            <div class="dash-card-v2">
+                <h3><i class="fas fa-stopwatch" style="color: var(--secondary);"></i> Pomodoro Laboratory</h3>
+                <div class="timer-display" id="timerDisplay">25:00</div>
+                <div class="timer-controls">
+                    <button id="startTimer" class="btn btn-primary btn-sm"><i class="fas fa-play"></i> Start</button>
+                    <button id="pauseTimer" class="btn btn-secondary btn-sm"><i class="fas fa-pause"></i> Pause</button>
+                    <button id="resetTimer" class="btn btn-secondary btn-sm"><i class="fas fa-undo"></i> Reset</button>
+                </div>
+                <div class="timer-modes">
+                    <span class="active-mode" id="pomodoroMode">Focus System (25m)</span>
+                    <span id="breakMode">Short Rest (5m)</span>
+                </div>
+            </div>
+
+            <div class="dash-card-v2">
+                <h3><i class="fas fa-sliders" style="color: #a855f7;"></i> Ambient Audio Workspace</h3>
+                <p class="card-desc" style="margin-bottom: 20px;">Mask background hostel noises to accelerate focus flow states.</p>
+                
+                <div class="ambient-mixer-v2">
+                    <div class="audio-row-v2">
+                        <span><i class="fas fa-music"></i> Lofi Chill Beats</span>
+                        <button class="sound-play-btn" data-sound="lofi"><i class="fas fa-play"></i></button>
+                    </div>
+                    <div class="audio-row-v2">
+                        <span><i class="fas fa-cloud-showers-heavy"></i> Deep Rain Noise</span>
+                        <button class="sound-play-btn" data-sound="rain"><i class="fas fa-play"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Dashboard Section -->
+    <audio id="alarmSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-84.wav" preload="auto"></audio>
+
     <section class="stats-section">
         <div class="stat-box"><h2>50,000+</h2><p>Active Students</p></div>
         <div class="stat-box"><h2>10,000+</h2><p>Study Plans Created</p></div>
@@ -211,7 +295,6 @@
         <div class="stat-box"><h2>200+</h2><p>Hours Saved</p></div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <h2>Student Success Stories</h2>
         <div class="testimonial-container">
@@ -224,53 +307,15 @@
                     </div>
                 </div>
                 <span class="badge badge-success">+40% Improvement</span>
-                <p class="comment">"This AI Study Planner completely changed my preparation strategy. I went from studying 10 hours randomly to focused 6-hour sessions. My mock test scores improved by 40% in just 2 months!"</p>
-                <div class="tags">
-                    <span>Physics</span><span>Chemistry</span><span>Mathematics</span>
-                </div>
+                <p class="comment">"This AI Study Planner completely changed my preparation strategy. I went from studying 10 hours randomly to focused 6-hour sessions."</p>
+                <div class="tags"><span>Physics</span><span>Chemistry</span><span>Mathematics</span></div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <h2>Ready to Transform Your Studies?</h2>
-        <p>Join 50,000+ students who are already studying smarter with AI-powered planning.</p>
-        <a href="#planner" class="btn btn-light">Get Started</a>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <h3>StudyAI</h3>
-                <p>AI-powered study planning for smarter learning and better results.</p>
-            </div>
-            <div>
-                <h4>Product</h4>
-                <ul>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Pricing</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Study Tips</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 StudyAI. All rights reserved. Made with ❤️ for students worldwide</p>
+            <p>&copy; 2026 StudyAI. Engineered for Maximum Performance.</p>
         </div>
     </footer>
 
