@@ -53,8 +53,7 @@ app.post('/api/save-plan', async (req, res) => {
     }
 });
 
-// Saari bachi hui requests ko frontend ke index.html par bheinjein
-app.get('*', (req, res) => {
+app.get('/:splat*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
