@@ -52,11 +52,10 @@ app.post('/api/save-plan', async (req, res) => {
         });
     }
 });
-
-app.get('/:splat*', (req, res) => {
+// Express 5 strictly compatible catch-all fallback
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
 // Universal Cloud port binding
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => {
