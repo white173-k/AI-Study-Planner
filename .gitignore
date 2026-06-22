@@ -1,1 +1,3 @@
 studyai.db
+node_modules/
+.env
