@@ -85,7 +85,7 @@ const PORT = 8080;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Backend Server Running on: http://localhost:${PORT}`);
 });
-// Localhost port ko hatakar cloud environment port allow karein
+// Agal-bagal agar do baar PORT ki line ho, toh use hata kar sirf ye ek block rakhein
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Backend Server Running on port: ${PORT}`);
